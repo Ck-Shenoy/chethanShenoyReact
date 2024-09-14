@@ -1,24 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-let count = 0;
-const handleClick = () =>
-{
-    setButtonText('Loading...');
+import ReactDOM from 'react-dom/client';
+import Header from './src/components/Header';
+import Body from './src/components/Body';
 
-    setTimeout(() =>
-    {
-        setButtonText('Submit');
-    }, 2000); // Reverts back to 'Submit' after 2 seconds
-};
-const Element = () => <h1>Hello I am the count is {count}</h1>;
-const Element2 = () => (
-    <div>
-        {Element()}
-        <h2>Nested Element</h2>
-        <p>This is a nested element</p>
-        <button onClick={handleClick}>submit</button>
+const App = () =>
+(
+    <div className='app'>
+        <Header />
+        <Body />
     </div>
 );
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Element2 />);
+root.render(<App />);
